@@ -16,10 +16,6 @@ namespace wfsimtp2.Controller
             this._modelo = new NormalDistribution();
         }
 
-        public void Calcular(int muestra, int intervalos, double media, double desviacion)
-        {
-            _modelo.Generar(muestra, intervalos, media, desviacion);
-        }
 
         public async Task CalcularAsync(int muestra, int intervalos, double media, double desviacion)
         {

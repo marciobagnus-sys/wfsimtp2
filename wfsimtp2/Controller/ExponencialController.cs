@@ -13,11 +13,6 @@ namespace wfsimtp2.Controller
             _modelo = new ExponencialDistribution();
         }
 
-        public void Calcular(int muestra, int intervalos, double lambda)
-        {
-            _modelo.Generar(muestra, intervalos, lambda);
-        }
-
         public async Task CalcularAsync(int muestra, int intervalos, double lambda)
         {
             await Task.Run(() =>

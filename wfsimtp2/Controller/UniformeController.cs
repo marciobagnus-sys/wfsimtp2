@@ -13,11 +13,6 @@ namespace wfsimtp2.Controller
             _modelo = new UniformDistribution();
         }
 
-        public void Calcular(int muestra, int intervalos, double minimo, double maximo)
-        {
-            _modelo.Generar(muestra, intervalos, minimo, maximo);
-        }
-
         public async Task CalcularAsync(int muestra, int intervalos, double minimo, double maximo)
         {
             await Task.Run(() =>
