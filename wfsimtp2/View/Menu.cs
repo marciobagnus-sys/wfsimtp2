@@ -144,6 +144,13 @@ namespace wfsimtp2
 
         private bool ValidarYLeerParametros()
         {
+
+            if (txtParametro1.Text.Contains(",") || txtParametro2.Text.Contains(","))
+            {
+                MessageBox.Show("Usá punto (.) en lugar de coma (,) para los decimales.\nEjemplo: 2.5 en vez de 2,5.");
+                return false;
+            }
+
             // Validación de la cantidad de intervalos
             if (cmbIntervalos.SelectedItem == null ||
                 !int.TryParse(cmbIntervalos.SelectedItem.ToString(), out cantidadIntervalos) ||
@@ -205,6 +212,13 @@ namespace wfsimtp2
             txtTamanioMuestra.Enabled = false;
             cmbIntervalos.Enabled = false;
             btnCalcular.Enabled = false;
+            this.cmbIntervalos.Click += new System.EventHandler(this.cmbIntervalos_Click);
+        }
+
+        private void cmbIntervalos_Click(object sender, EventArgs e)
+        {
+            // Forzamos que se despliegue el ComboBox
+            cmbIntervalos.DroppedDown = true;
         }
     }
 }

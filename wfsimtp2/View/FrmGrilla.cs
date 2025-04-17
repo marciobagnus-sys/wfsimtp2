@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using wfsimtp2.Model;
+using wfsimtp2.Model.Entities;
 
 namespace wfsimtp2
 {
@@ -72,16 +73,21 @@ namespace wfsimtp2
 
         private void FrmGrilla_Load(object sender, EventArgs e)
         {
-            int height = dataGridView1.RowCount * dataGridView1.RowTemplate.Height + 50;
-            this.ClientSize = new Size(dataGridView1.Width + 40, height);
-        }
-    }
+            // Ajustar automáticamente el tamaño de las columnas según su contenido
+            dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
-    public class GrillaItem
-    {
-        public int Numero { get; set; }
-        public double Desde { get; set; }
-        public double Hasta { get; set; }
-        public int Frecuencia { get; set; }
+            // Calcular el ancho total de las columnas visibles (si lo deseas para ajustar la ventana)
+            int totalColumnWidth = 0;
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                totalColumnWidth += column.Width;
+            }
+
+            // Ajustar el tamaño de la ventana al contenido de la grilla
+            int width = totalColumnWidth + 40;  // Añadir algo de margen
+            int height = dataGridView1.RowCount * dataGridView1.RowTemplate.Height + 50; // Ajustar alto
+
+            this.ClientSize = new Size(width, height);
+        }
     }
 }

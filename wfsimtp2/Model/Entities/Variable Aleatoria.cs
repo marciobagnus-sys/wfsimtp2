@@ -2,7 +2,7 @@
 {
     public class VariableAleatoria
     {
-        public int Numero { get; set; }
+        //public int Numero { get; set; }
         public double Valor { get; set; }
     }
 }   

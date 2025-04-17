@@ -50,6 +50,7 @@
     <Compile Include="Controller\ExponencialController.cs" />
     <Compile Include="Controller\NormalController.cs" />
     <Compile Include="Controller\UniformeController.cs" />
+    <Compile Include="Model\Entities\GrillaItem.cs" />
     <Compile Include="View\FrmVariablesAleatorias.cs">
       <SubType>Form</SubType>
     </Compile>

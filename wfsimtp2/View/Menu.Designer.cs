@@ -177,6 +177,7 @@ namespace wfsimtp2
             // 
             // cmbIntervalos
             // 
+            this.cmbIntervalos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIntervalos.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cmbIntervalos.FormattingEnabled = true;
             this.cmbIntervalos.Items.AddRange(new object[] {
